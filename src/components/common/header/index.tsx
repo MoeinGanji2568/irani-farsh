@@ -9,7 +9,7 @@ import Drawer from "../../ui/Drawer";
 const Header = () => {
   const [isOpenDrawer, setIsOpenDrawer] = useState<boolean>(false);
   return (
-    <div className="holder">
+    <div className="holder mb-7">
       <div className="flex items-center justify-between py-5">
         <div className="flex items-center gap-5">
           <Button
@@ -24,8 +24,8 @@ const Header = () => {
         </div>
         <HeadersButton />
       </div>
-      <NavigationSection />
       <HeaderSearchInput extraClass="block md:hidden mx-auto" />
+      <NavigationSection />
       <Drawer open={isOpenDrawer} onClose={() => setIsOpenDrawer(false)}>
         <CustomLink />
       </Drawer>

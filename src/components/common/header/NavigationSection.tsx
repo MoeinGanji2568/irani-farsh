@@ -3,11 +3,10 @@ import { NavLinks } from "../../../constants/NavLinks";
 
 const NavigationSection = () => {
   return (
-    <ul
-      className="md:flex items-center gap-6 mt-3 pb-3 border-b-2 border-secondary-300
-    hidden"
-    >
-      <CustomLink />
+    <ul className="mt-3 md:pb-3 border-b-2 border-secondary-300">
+      <div className="hidden md:flex items-center gap-6">
+        <CustomLink />
+      </div>
     </ul>
   );
 };
