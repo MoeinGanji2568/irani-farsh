@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Button from "../../ui/Button";
 import {
   ArrowLeftEndOnRectangleIcon,
@@ -10,12 +11,14 @@ const HeadersButton = () => {
       <Button variant="outline">
         <ShoppingCartIcon className="size-5" />
       </Button>
-      <Button variant="outline">
-        <div className="flex items-center gap-2">
-          <ArrowLeftEndOnRectangleIcon className="size-6" />
-          <span className="hidden md:block"> ورود/ثبت نام</span>
-        </div>
-      </Button>
+      <Link to="/login">
+        <Button variant="outline">
+          <div className="flex items-center gap-2">
+            <ArrowLeftEndOnRectangleIcon className="size-6" />
+            <span className="hidden md:block"> ورود/ثبت نام</span>
+          </div>
+        </Button>
+      </Link>
     </div>
   );
 };
