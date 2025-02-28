@@ -3,7 +3,20 @@ import { NavLinks } from "../../../constants/NavLinks";
 
 const NavigationSection = () => {
   return (
-    <ul className="flex items-center gap-6 mt-3 pb-3 border-b-2 border-secondary-300">
+    <ul
+      className="md:flex items-center gap-6 mt-3 pb-3 border-b-2 border-secondary-300
+    hidden"
+    >
+      <CustomLink />
+    </ul>
+  );
+};
+
+export default NavigationSection;
+
+export function CustomLink() {
+  return (
+    <>
       {NavLinks.map((item, index) => {
         return (
           <li key={index}>
@@ -16,8 +29,6 @@ const NavigationSection = () => {
           </li>
         );
       })}
-    </ul>
+    </>
   );
-};
-
-export default NavigationSection;
+}
