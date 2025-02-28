@@ -58,7 +58,7 @@
 
 @layer components {
   .holder {
-    @apply min-w-[330px] max-w-[1200px] mx-auto px-2;
+    @apply min-w-[330px] max-w-[1230px] mx-auto px-2;
   }
   .btn {
     @apply p-3 rounded-xl transition-all duration-300 text-base;
@@ -67,7 +67,7 @@
     @apply bg-red hover:bg-error text-secondary-0;
   }
   .btn--secondary {
-    @apply bg-secondary-600 text-secondary-100;
+    @apply bg-secondary-200 text-secondary-900;
   }
   .btn--outline {
     @apply border border-red text-red;
