@@ -3,7 +3,7 @@ import Header from "../../components/common/header";
 
 const MainLayout = () => {
   return (
-    <div className="h-screen">
+    <div className="h-screen px-3">
       <Header />
       <Outlet />
     </div>
