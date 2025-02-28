@@ -50,6 +50,7 @@ module.exports = {
         success: withOpacity("--color-success"),
         warning: withOpacity("--color-warning"),
         error: withOpacity("--color-error"),
+        red: withOpacity("--color-red"),
       },
       container: {
         center: true,
