@@ -1,4 +1,5 @@
 import CategorySection from "./CategorySection";
+import ClubSection from "./ClubSection";
 import HeroSection from "./HeroSection";
 
 const LandingPage = () => {
@@ -6,6 +7,7 @@ const LandingPage = () => {
     <div>
       <HeroSection />
       <CategorySection />
+      <ClubSection />
     </div>
   );
 };
