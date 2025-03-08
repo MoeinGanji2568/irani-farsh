@@ -38,6 +38,7 @@ module.exports = {
           900: withOpacity("--color-secondary-900"),
           800: withOpacity("--color-secondary-800"),
           700: withOpacity("--color-secondary-700"),
+          650: withOpacity("--color-secondary-650"),
           600: withOpacity("--color-secondary-600"),
           500: withOpacity("--color-secondary-500"),
           400: withOpacity("--color-secondary-400"),
