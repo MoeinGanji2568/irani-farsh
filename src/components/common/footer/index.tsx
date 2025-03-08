@@ -9,7 +9,7 @@ const Footer = () => {
       <div className="holder flex flex-wrap justify-center lg:justify-between py-5">
         <div className="grid gap-8 mb-10">
           <h4 className="text-red font-bold text-2xl">ایرانی فرش</h4>
-          <p className="max-w-[494px] text-secondary-600">
+          <p className="max-w-[494px] text-secondary-600  text-sm sm:text-base">
             با ایرانی فرش همراه باشید و از زیبایی و شگفتی های فرش های متنوع و با
             کیفیت ما لذت ببرید. خرید آسان، تحویل سریع و خدمات پس از فروش حرفه
             ای، تنها چندی از ویژگی های خرید از ماست. با ایرانی فرش یک خرید آسان
@@ -43,28 +43,30 @@ const Footer = () => {
         </div>
         <div className="flex gap-x-5 md:gap-x-16 px-10">
           <div>
-            <h6 className="font-bold text-secondary-600 mb-5">
+            <h6 className="font-bold text-secondary-600 mb-5 text-xs sm:text-base">
               فرش های دست بافت
             </h6>
-            <div className="text-secondary-650 grid gap-4">
+            <div className="text-secondary-650 grid gap-4 text-xs sm:text-base">
               <span>لوکس</span>
               <span>قدیمی</span>
               <span>مدرن</span>
             </div>
           </div>
           <div>
-            <h6 className="font-bold text-secondary-600 mb-5">
+            <h6 className="font-bold text-secondary-600 mb-5 text-xs sm:text-base">
               فرش های ماشینی{" "}
             </h6>
-            <div className="text-secondary-650 grid gap-4">
+            <div className="text-secondary-650 grid gap-4 text-xs sm:text-base">
               <span>لوکس</span>
               <span>قدیمی</span>
               <span>مدرن</span>
             </div>
           </div>
           <div>
-            <h6 className="font-bold text-secondary-600 mb-5">سایر فرش ها</h6>
-            <div className="text-secondary-650 grid gap-4">
+            <h6 className="font-bold text-secondary-600 mb-5 text-xs sm:text-base">
+              سایر فرش ها
+            </h6>
+            <div className="text-secondary-650 grid gap-4  text-xs sm:text-base">
               <span>لوکس</span>
               <span>قدیمی</span>
               <span>مدرن</span>
