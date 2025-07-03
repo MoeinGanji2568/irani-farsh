@@ -63,6 +63,9 @@
   .btn {
     @apply p-3 rounded-xl transition-all duration-300 text-base;
   }
+  .basicborder{
+    @apply border border-gray-300;
+  }
   .btn--primary {
     @apply bg-red hover:bg-error text-secondary-0;
   }
@@ -89,6 +92,12 @@
   }
   .badge--danger {
     @apply bg-red-500 text-white;
+  }
+  .basicflex{
+    @apply flex justify-center items-center;
+  }
+  .flexbetween{
+    @apply flex justify-between items-center;
   }
 }
 
