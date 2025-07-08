@@ -63,7 +63,7 @@
   .btn {
     @apply p-3 rounded-xl transition-all duration-300 text-base;
   }
-  .basicborder{
+  .basicborder {
     @apply border border-gray-300;
   }
   .btn--primary {
@@ -93,10 +93,10 @@
   .badge--danger {
     @apply bg-red-500 text-white;
   }
-  .basicflex{
+  .basicflex {
     @apply flex justify-center items-center;
   }
-  .flexbetween{
+  .flexbetween {
     @apply flex justify-between items-center;
   }
 }

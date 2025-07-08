@@ -7,14 +7,16 @@ export const commonRoute = [
   {
     path: "/",
     element: <MainLayout />,
-    children: [{ element: <Landing />, index: true }],
+    children: [
+      { element: <Landing />, index: true },
+      {
+        path: "/rug/:id",
+        element: <RugsDetail />,
+      },
+    ],
   },
   {
     path: "/login",
     element: <Login />,
-  },
-  {
-    path: "/rug/:id",
-    element: <RugsDetail />,
   },
 ];
