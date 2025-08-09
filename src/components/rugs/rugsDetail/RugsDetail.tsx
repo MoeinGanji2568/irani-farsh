@@ -11,7 +11,7 @@ const RugsDetail = () => {
   });
   if (!rugs) return <h1>Data Not Found ..!</h1>;
   return (
-    <div className="w-[1220px] m-auto">
+    <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <RugsDetailData rugs={rugs?.data} />
     </div>
   );
