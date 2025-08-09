@@ -4,8 +4,8 @@ export const NavLinks = [
     path: "/",
   },
   {
-    label: "وبلاگ",
-    path: "/blog",
+    label: "فرش",
+    path: "/rug",
   },
   {
     label: "تماس با ما",
