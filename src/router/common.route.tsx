@@ -2,6 +2,7 @@ import Login from "../components/Login/Login";
 import RugsDetail from "../components/rugs/rugsDetail/RugsDetail";
 import MainLayout from "../core/layout/MainLayout";
 import Landing from "../screens/landing/Landing";
+import Carpets from "../screens/carpets";
 
 export const commonRoute = [
   {
@@ -12,6 +13,10 @@ export const commonRoute = [
       {
         path: "/rug/:id",
         element: <RugsDetail />,
+      },
+      {
+        path: "/rug",
+        element: <Carpets />,
       },
     ],
   },

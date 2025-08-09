@@ -1,26 +1,82 @@
 import { FC } from "react";
-import { Rug } from "../../../data/dataTypes";
+import { Carpet } from "../../../types/carpets/carpet.types";
 import Button from "../../ui/Button";
 import { AiOutlineShop } from "react-icons/ai";
 import { FaRegStar } from "react-icons/fa";
+import { onErrorImage } from "../../../hooks/OnErrorImage";
+import { FaRegHeart, FaHeart } from "react-icons/fa";
+import { FaRegBookmark, FaBookmark } from "react-icons/fa";
+import { useCarpetActions } from "../../../hooks/useCarpetActions";
 
 interface RugsDetailDataProp {
-  rugs: Rug;
+  rugs: Carpet;
 }
 
 const RugsDetailData: FC<RugsDetailDataProp> = ({ rugs }) => {
+  const {
+    like,
+    removeLike,
+    bookmark,
+    removeBookmark,
+    isLiking,
+    isRemovingLike,
+    isBookmarking,
+    isRemovingBookmark,
+  } = useCarpetActions();
+
+  const handleLike = () => {
+    if (rugs?.isLike) {
+      removeLike(rugs.id);
+    } else {
+      like(rugs.id);
+    }
+  };
+
+  const handleBookmark = () => {
+    if (rugs?.isFavorite) {
+      removeBookmark(rugs.id);
+    } else {
+      bookmark(rugs.id);
+    }
+  };
+
   return (
     <div className="flexbetween gap-5 my-10">
       <div className="w-3/4 flexbetween">
-        <div className="w-1/2">
+        <div className="w-1/2 p-4">
           <img
-            src={`/${rugs.image}`}
-            alt={rugs.title}
+            src={rugs?.image}
+            alt={rugs?.name}
             className="w-full h-full"
+            onError={onErrorImage}
           />
         </div>
         <div className="w-1/2 flex flex-col gap-5">
-          <span className="text-2xl font-semibold">{rugs.title}</span>
+          <div className="flex items-center gap-4">
+            <span className="text-2xl font-semibold">{rugs.name}</span>
+            <button
+              onClick={handleLike}
+              disabled={isLiking || isRemovingLike}
+              className="disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              {rugs.isLike ? (
+                <FaHeart className="size-6 cursor-pointer text-rose-500" />
+              ) : (
+                <FaRegHeart className="size-6 cursor-pointer" />
+              )}
+            </button>
+            <button
+              onClick={handleBookmark}
+              disabled={isBookmarking || isRemovingBookmark}
+              className="disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              {rugs.isFavorite ? (
+                <FaBookmark className="size-6 cursor-pointer text-blue-300" />
+              ) : (
+                <FaRegBookmark className="size-6 cursor-pointer" />
+              )}
+            </button>
+          </div>
           <div className="flex gap-8">
             <span className="text-lg">اندازه فرش:</span>
             <span className="text-lg">{rugs.size}</span>
@@ -37,9 +93,7 @@ const RugsDetailData: FC<RugsDetailDataProp> = ({ rugs }) => {
             </div>
             <div className="w-[48%] bg-gray-100 p-3 rounded-lg">
               <p className="text-sm text-gray-500">جنس نخ پود</p>
-              <span className="font-semibold text-base">
-                {rugs.warpMaterial}
-              </span>
+              <span className="font-semibold text-base">ناب</span>
             </div>
             <div className="w-[48%] bg-gray-100 p-3 rounded-lg">
               <p className="text-sm text-gray-500">شکل</p>
@@ -47,15 +101,11 @@ const RugsDetailData: FC<RugsDetailDataProp> = ({ rugs }) => {
             </div>
             <div className="w-[48%] bg-gray-100 p-3 rounded-lg">
               <p className="text-sm text-gray-500">جنس نخ خاب</p>
-              <span className="font-semibold text-base">
-                {rugs.weftMaterial}
-              </span>
+              <span className="font-semibold text-base">ناب</span>
             </div>
             <div className="w-[48%] bg-gray-100 p-3 rounded-lg">
               <p className="text-sm text-gray-500">جنس نخ تار</p>
-              <span className="font-semibold text-base">
-                {rugs.pileMaterial}
-              </span>
+              <span className="font-semibold text-base">ناب</span>
             </div>
           </div>
           <Button
@@ -83,7 +133,7 @@ const RugsDetailData: FC<RugsDetailDataProp> = ({ rugs }) => {
         <hr />
         <div className="flexbetween text-lg">
           <span>قیمت:</span>
-          <span>{rugs.price}</span>
+          <span>{rugs.price.toLocaleString("fa-IR")} تومان</span>
         </div>
         <Button variant="danger" className="hover:bg-rose-700 hover:text-white">
           افزودن به سبد خرید

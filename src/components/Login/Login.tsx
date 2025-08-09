@@ -1,16 +1,18 @@
 import { SubmitHandler, useForm } from "react-hook-form";
 import loginCarpetImg from "../../assets/images/login carpet.svg";
+import { useLogin } from "../../hooks/useLogin";
 
 const Login = () => {
   interface LoginFormInputs {
-    phone: string;
+    email: string;
     password: string;
   }
 
   const { register, handleSubmit } = useForm<LoginFormInputs>();
+  const { mutate: login } = useLogin();
 
   const onSubmit: SubmitHandler<LoginFormInputs> = (data) => {
-    console.log("اطلاعات فرم:", data);
+    login(data);
   };
 
   return (
@@ -27,10 +29,10 @@ const Login = () => {
         >
           {/* <label className="text-lg text-[#CB1B1B] font-semibold">شماره همراه</label> */}
           <input
-            {...register("phone")}
+            {...register("email")}
             className="border border-[#CB1B1B] h-14 rounded-xl px-3"
             type="text"
-            placeholder="شماره همراه"
+            placeholder="ایمیل"
           />
           {/* <label className="text-lg text-[#CB1B1B] font-semibold">رمزعبور</label> */}
           <input

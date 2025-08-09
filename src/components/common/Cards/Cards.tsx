@@ -1,16 +1,25 @@
 import { Link } from "react-router-dom";
 import Button from "../../ui/Button";
-import { Rug } from "../../../data/dataTypes";
+import { Carpet } from "../../../types/carpets/carpet.types";
+import NotFound from "../../../../public/images/notFound.png";
+import { onErrorImage } from "../../../hooks/OnErrorImage";
 
 interface Props {
-  rug: Rug;
+  rug: Carpet;
 }
 
 const Cards = ({ rug }: Props) => {
   return (
     <div className="basicborder h-full rounded-xl py-3 flex-shrink-0 bg-white shadow-md">
-      <img src={rug.image} alt={rug.title} className="w-full mt-2 rounded-md" />
-      <div className="text-lg px-4 mt-4 h-14 font-semibold">{rug.title}</div>
+      <div className="relative aspect-video overflow-hidden">
+        <img
+          src={rug.image || NotFound}
+          alt={rug.name}
+          className="object-cover object-center hover:scale-110 transition-all ease-out duration-300"
+          onError={onErrorImage}
+        />
+      </div>
+      <div className="text-lg px-4 mt-4 h-14 font-semibold">{rug.name}</div>
       <div className="flex justify-between mt-5 px-4 text-sm text-gray-700">
         <span>قیمت:</span>
         <span className="text-base font-medium">
