@@ -1,4 +1,5 @@
 import http from "../../httpService";
+import { CreateCarpet } from "../../../types/carpets/createCarpet.types";
 
 interface CarpetFilters {
   page?: number;
@@ -64,6 +65,10 @@ export async function removeBookmarkCarpet(id: number) {
 
 export async function getFavoriteCarpet() {
   return http.get(`/carpets/user/favorites`).then(({ data }) => data.data);
+}
+
+export async function createCarpet(data: CreateCarpet) {
+  return http.post(`/carpets`, data);
 }
 
 const carpetService = {

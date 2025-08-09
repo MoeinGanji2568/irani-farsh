@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Header from "../../components/panel/Header";
 import SideBar from "../../components/panel/SideBar";
+import MobileSideBarNavs from "../../components/panel/MobileSideBarNavs";
 
 const PanelLayout = () => {
   return (
@@ -16,6 +17,9 @@ const PanelLayout = () => {
               <Outlet />
             </div>
           </main>
+        </div>
+        <div className="fixed lg:hidden p-2 bottom-5 left-0 right-0 w-[96%] mx-auto bg-slate-100 rounded-2xl shadow-xl border">
+          <MobileSideBarNavs />
         </div>
       </div>
     </div>

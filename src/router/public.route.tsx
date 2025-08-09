@@ -5,6 +5,7 @@ import { commonRoute } from "./common.route";
 import { FavoritePage } from "../components/panel/favorite";
 import { ProfilePage } from "../components/panel/profile";
 import Security from "../components/panel/security";
+import CreateCarpetPost from "../components/panel/carpet/createCarpetPost";
 
 export const publicRoutes = createBrowserRouter([
   ...commonRoute,
@@ -26,6 +27,10 @@ export const publicRoutes = createBrowserRouter([
       {
         path: "/panel/security",
         element: <Security />,
+      },
+      {
+        path: "/panel/create-carpet-post",
+        element: <CreateCarpetPost />,
       },
     ],
   },

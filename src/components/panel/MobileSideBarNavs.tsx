@@ -22,7 +22,7 @@ const sidebarNavs: {
   },
   {
     id: 2,
-    title: "فرش های مورد علاقه",
+    title: "مورد علاقه",
     icon: <HeartIcon className="w-5 h-5" />,
     href: "/panel/favorite",
   },
@@ -40,32 +40,32 @@ const sidebarNavs: {
   },
   {
     id: 5,
-    title: "ایجاد پست فرش",
+    title: "ایجاد پست",
     icon: <PlusIcon className="w-5 h-5" />,
     href: "/panel/create-carpet-post",
   },
 ];
 
-const SideBarNavs = () => {
+const MobileSideBarNavs = () => {
   const location = useLocation();
 
   return (
-    <ul className="space-y-2">
+    <ul className="flex justify-between items-center">
       {sidebarNavs.map((nav) => {
         return (
           <li key={nav.id}>
             <Link
               to={nav.href}
               className={classNames(
-                "flex items-center gap-x-2 rounded-2xl font-medium hover:text-primary-900 transition-all duration-200 text-secondary-700 py-3 px-4",
+                "flex flex-col items-center gap-x-2 rounded-2xl font-medium hover:text-primary-900 transition-all duration-200 text-secondary-700 py-2 px-3",
                 {
                   "bg-primary-100/40 !font-bold text-primary-900":
                     location.pathname === nav.href,
                 }
               )}
             >
-              {nav.icon}
-              {nav.title}
+              <span className="text-sm">{nav.icon}</span>
+              <p className="text-xs text-center">{nav.title}</p>
             </Link>
           </li>
         );
@@ -74,4 +74,4 @@ const SideBarNavs = () => {
   );
 };
 
-export default SideBarNavs;
+export default MobileSideBarNavs;
