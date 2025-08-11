@@ -15,9 +15,11 @@ const HeadersButton = () => {
 
   return (
     <div className={`flex gap-3 ${isLoading ? "opacity-50" : ""}`}>
-      <Button variant="outline">
-        <ShoppingCartIcon className="size-5" />
-      </Button>
+      <Link to="/panel/cart">
+        <Button variant="outline">
+          <ShoppingCartIcon className="size-5" />
+        </Button>
+      </Link>
       <Link to="/login">
         <Button variant="outline">
           <div className="flex items-center gap-2">
