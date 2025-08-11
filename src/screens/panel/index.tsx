@@ -1,4 +1,6 @@
+import Dashboard from "../../components/panel/dashboard";
+
 const PanelPage = () => {
-  return <div>panel</div>;
+  return <Dashboard />;
 };
 export default PanelPage;
