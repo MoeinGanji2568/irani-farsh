@@ -1,7 +1,8 @@
-import { Link } from "react-router-dom";
-import Button from "../ui/Button";
 import { useQuery } from "@tanstack/react-query";
+import { Link } from "react-router-dom";
 import { getUserInfoApi } from "../../services/api/auth/authService";
+import Button from "../ui/Button";
+import { ShoppingCartIcon } from "@heroicons/react/24/outline";
 
 const Header = () => {
   const { data: user, isLoading } = useQuery({
@@ -21,12 +22,9 @@ const Header = () => {
           </div>
         </div>
         <div className="flex items-center gap-x-3">
-          <Link to="/">
-            <Button
-              color="outline"
-              className={`border-slate-200 rounded-2xl flex cursor-pointer items-center`}
-            >
-              {/* <Avatar src={user?.avatarUrl} /> */}avatar
+          <Link to="/panel/cart">
+            <Button>
+              <ShoppingCartIcon className="w-5 h-5" />
             </Button>
           </Link>
         </div>

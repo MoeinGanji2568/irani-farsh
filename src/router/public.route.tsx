@@ -6,6 +6,7 @@ import { FavoritePage } from "../components/panel/favorite";
 import { ProfilePage } from "../components/panel/profile";
 import Security from "../components/panel/security";
 import CreateCarpetPost from "../components/panel/carpet/createCarpetPost";
+import Cart from "../components/panel/cart";
 
 export const publicRoutes = createBrowserRouter([
   ...commonRoute,
@@ -19,6 +20,10 @@ export const publicRoutes = createBrowserRouter([
       {
         path: "/panel/favorite",
         element: <FavoritePage />,
+      },
+      {
+        path: "/panel/cart",
+        element: <Cart />,
       },
       {
         path: "/panel/profile",

@@ -6,6 +6,7 @@ import {
   UserIcon,
   LockClosedIcon,
   PlusIcon,
+  ShoppingCartIcon,
 } from "@heroicons/react/24/outline";
 
 const sidebarNavs: {
@@ -43,6 +44,12 @@ const sidebarNavs: {
     title: "ایجاد پست فرش",
     icon: <PlusIcon className="w-5 h-5" />,
     href: "/panel/create-carpet-post",
+  },
+  {
+    id: 6,
+    title: "سبد خرید",
+    icon: <ShoppingCartIcon className="w-5 h-5" />,
+    href: "/panel/cart",
   },
 ];
 

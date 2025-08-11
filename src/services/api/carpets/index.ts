@@ -71,6 +71,20 @@ export async function createCarpet(data: CreateCarpet) {
   return http.post(`/carpets`, data);
 }
 
+export async function getCart() {
+  return http.get(`/cart`).then(({ data }) => data.data);
+}
+
+export async function addToCart(id: number, quantity: number) {
+  return http.post(`/cart/${id}`, {
+    quantity: quantity,
+  });
+}
+
+export async function removeFromCart(id: number) {
+  return http.delete(`/cart/${id}`).then(({ data }) => data.data);
+}
+
 const carpetService = {
   getCarpet,
   getCarpetDetail,
