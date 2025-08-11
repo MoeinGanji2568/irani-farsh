@@ -4,7 +4,7 @@ import { onErrorImage } from "../../../hooks/OnErrorImage";
 
 interface CartItemProps {
   item: CartItemType;
-  onUpdateQuantity: (id: number, quantity: number) => void;
+  onUpdateQuantity: (params: { id: number; quantity: number }) => void;
   onRemove: (id: number) => void;
   formatPrice: (price: number) => string;
   isUpdatingQuantity: boolean;
@@ -21,7 +21,7 @@ const CartItem: React.FC<CartItemProps> = ({
 }) => {
   const handleQuantityChange = (newQuantity: number) => {
     if (newQuantity < 1) return;
-    onUpdateQuantity(item.carpet.id, newQuantity);
+    onUpdateQuantity({ id: item.carpet.id, quantity: newQuantity });
   };
 
   return (
